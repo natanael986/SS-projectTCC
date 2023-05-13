@@ -13,6 +13,7 @@ use App\Http\Controllers\Post\PostLikeController as PostLikeController;
 use App\Http\Controllers\Post\PostReportControllerManager;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserReportController;
+use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 
 /*
