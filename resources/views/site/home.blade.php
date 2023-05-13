@@ -33,7 +33,7 @@
     @else
         <div class="Home_section">
             <div class="Home_header">
-                <h2 class="mb-4">INÍCIO</h2>
+                <h2 class="mb-4">Teste</h2>
             </div>
         </div>
     @endif
