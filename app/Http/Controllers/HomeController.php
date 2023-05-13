@@ -36,7 +36,7 @@ class HomeController extends Controller
         $searchMensage = null;
         $posts = null;
 
-        if ($routeName === "site.search") {
+        if ($routeName === "Pesquisa") {
             if (!empty(array_filter($searchType))) {
                 foreach ($searchType as $key => $value) {
                     if ($value) {

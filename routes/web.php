@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('Inicio');
 
 // ROTA RESPONSÁVEL PELA SEARCHBAR
-Route::get('/search', [HomeController::class, 'index'])->name('site.search');
+Route::get('/search', [HomeController::class, 'index'])->name('Pesquisa');
 Route::get('/autocomplete-search', [HomeController::class, 'autocompleteSearch']);
 
 //ROTA QUE VAI PARA A PAGINA SOBRE A EMPRESA

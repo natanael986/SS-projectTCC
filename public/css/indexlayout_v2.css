@@ -103,20 +103,27 @@
 }
 
 .list-search ul {
+    background-color: transparent;
+
     list-style: none;
     font-size: 25px;
     padding-left: 10px;
-
     border: 1px solid #ccc;
+    border-top: none;
     border-radius: 0 0 10px 10px;
+    position: absolute;
+    left: -33px !important;
+    top: 28px !important;
+    width: 318px;
 }
 
 .list-search ul li {
-    border-top: 1px solid #ccc;
+    padding-top: 10px;
 }
 
 .list-search ul li a {
     color: #000000;
+    text-decoration: none;
 }
 
 .button-random button {

@@ -162,7 +162,7 @@
                                 </button>
                             </a>
                         </form>
-                        <form action="{{ route('site.search') }}" method="GET">
+                        <form action="{{ route('Pesquisa') }}" method="GET">
                             <div>
                                 <a class="search-icon" href="#" type="submit">
                                     <i class='bx bx-search'></i>

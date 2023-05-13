@@ -1,6 +1,6 @@
-<form method="get" action="{{ route('site.search') }}">
+<form method="get" action="{{ route('Pesquisa') }}">
 </form>
-<form method="get" action="{{ route('site.search') }}">
+<form method="get" action="{{ route('Pesquisa') }}">
     <ul class="sub-menu search-let">
         <li><a class="link_name" href="#"> PRIMEIRA LETRA </a></li>
         <li>
