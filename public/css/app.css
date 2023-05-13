@@ -1,0 +1,33 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+@import url('./sidebar_v2.css');
+
+@import url('./LetraPesquisa.css');
+
+@import url('./indexlayout_v2.css');
+
+@import url('./indexHome.css');
+
+@import url('./publi.css');
+
+@import url('./likeDislike.css');
+
+@import url('./ModalDenuncia.css');
+
+@import url('./cadastro.css');
+
+@import url('./profile.css');
+
+@import url('./AlterarImagem.css');
+
+/* @import url('./AreaComentario.css'); */
+
+/* @import url('./comment.css'); */
+
+/* @import url('./index.css'); */
+/* @import url('./style.css'); */
+
+@import url('./usercard.css');

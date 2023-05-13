@@ -1,0 +1,137 @@
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.header_content i.bx-menu {
+    font-size: 60px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.home-nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.home-nav-left .home-nav-left-itens {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-nav-left .home-nav-left-itens form {
+    position: relative;
+    padding: 16px;
+}
+
+.home-nav-left .home-nav-left-itens form>div {
+    height: 46px;
+    width: 318px;
+
+    border-radius: 10px !important;
+    border: 1px solid #7789B0;
+
+    background-color: #fff;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.home-section-input {
+    padding-left: 10px;
+    outline: 0;
+    box-shadow: none;
+    border: none;
+    font-size: 16px;
+    background-color: #fff;
+
+    width: 277px;
+
+}
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    font-size: 32px;
+}
+
+.home-nav-left .search-icon {
+    font-size: 32px;
+    margin-top: auto;
+}
+
+.home-nav-left .search-options .search-options-title {
+    font-weight: 400;
+    font-size: 10px;
+    color: #6E768E;
+    margin-bottom: 10px;
+}
+
+.home-nav-left .search-options ul li a {
+    text-decoration: none;
+    color: #181F2E;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.home-nav-left .search-options ul li .search-options-description {
+    font-weight: 400;
+    font-size: 10px;
+    color: #6E768E;
+}
+
+.list-search ul {
+    list-style: none;
+    font-size: 25px;
+    padding-left: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+}
+
+.list-search ul li {
+    border-top: 1px solid #ccc;
+}
+
+.list-search ul li a {
+    color: #000000;
+}
+
+.button-random button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #11101d;
+
+    cursor: pointer;
+}
+
+.button-random button i {
+    font-size: 24px;
+    color: #FFFFFF;
+}

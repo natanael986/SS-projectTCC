@@ -1,0 +1,29 @@
+.LetraPesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LetraButton button {
+    background-color: white;
+    color: black;
+    border: none;
+    margin-left: 10px;
+    border-radius: 50px;
+    border-style: inherit;
+    width: 45px;
+    height: 45px;
+    float: left;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    grid-template-columns: 95px 95px 95px 95px 95px;
+    grid-gap: 8px;
+    grid-template-rows: 100px 100px 100px 100px;
+}
+
+.LetraButton button a {
+    color: black;
+}

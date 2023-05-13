@@ -1,0 +1,185 @@
+/* Home Section */
+.Home_section {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Home header */
+.Home_header {
+    margin-left: -50px;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.Home_section_publi {
+    padding-bottom: 100px;
+}
+/* Home publicacao */
+.Home_publi {
+    border-radius: 30px;
+    box-shadow: 1px 10px 20px 10px rgba(64, 3, 78, 0.575);
+    background: #03032a;
+    margin-bottom: 100px;
+    color: white;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* Home publicacao content */
+@media only screen and (min-width: 768px) {
+    .Home_publi_content {
+        margin-left: 100px;
+        margin-right: 100px;
+        display: block;
+
+        align-items: center;
+        color: white;
+    }
+
+    .Home_publi_content h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0 20px 0;
+        font-size: 50px;
+    }
+
+    .Home_publi_content p {
+        font-size: 20px;
+        text-align: center;
+        padding: 20px 0 20px 0;
+    }
+
+    .Home_publi_content h2 {
+        font-size: 25px;
+        padding: 20px 0 0 0;
+    }
+
+    .Home_publi_content i {
+        font-size: 20px;
+        padding: 0 0 20px 0;
+
+    }
+
+    /* Home puclicacao buttons */
+    .Home_publi_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+}
+
+
+.coment {
+    width: 600px;
+    height: 50px;
+    background-color: #ffff00;
+    border: none;
+
+}
+
+.coment_button {
+    border: none;
+    background-color: white;
+
+}
+
+.IconUsers {
+    border-radius: 40px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+
+.coment_input {
+    border: none;
+    float: left;
+    outline: none;
+    font-size: 20px;
+    padding-left: 30px;
+    width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+
+    overflow-y: scroll;
+    overflow: hidden;
+}
+
+/* Comentario home */
+
+.form_comment {
+    background-color: #15001a;
+    padding: 20px 20px;
+    border-radius: 30px;
+}
+
+.label_comment {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.textarea_comment {
+    width: 100%;
+    padding: 10px;
+    height: 65px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.button_comment[type="submit"] {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#comments {
+    margin-top: 20px;
+}
+
+#comments h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#comments ul {
+    list-style: none;
+    padding: 0;
+}
+
+#comments li {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#comments li p {
+    margin: 0;
+}
+
+#comments li small {
+    font-size: 12px;
+    color: #888;
+}
+
+.ComentarioArea {
+    background-color: black;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.InputArea {
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+}

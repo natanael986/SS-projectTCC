@@ -1,0 +1,90 @@
+@media only screen and (min-width: 768px) {
+    .comment_user_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .comment_user_content_item {
+        display: flex;
+        align-items: center;
+    }
+
+    .item_comment {
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .likeDislike {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 50px;
+    }
+
+    .likeDislike>form>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .likeDislike_comment {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: white;
+        color: black;
+        border-radius: 30px;
+        height: 50px;
+    }
+
+    .button-like {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .button-like>a>i {
+        color: black;
+
+        text-decoration: none;
+    }
+
+    .div_like {
+        background-color: rgb(255, 255, 255);
+        border-radius: 30px;
+        height: 50px;
+    }
+
+    .div_comment {
+        background-color: rgb(255, 255, 255);
+        border-radius: 30px;
+        width: 120px;
+        padding: 5px 10px;
+    }
+
+    .button-like button {
+        border: none;
+        outline: 0;
+        background-color: transparent;
+    }
+
+    .button-like button i,
+    .button-like a i {
+        font-size: 24px;
+    }
+
+    .button-like button i,
+    .button-like p,
+    .button-like a i {
+        width: 100%;
+        height: 100%;
+
+        padding: 10px;
+
+    }
+}
