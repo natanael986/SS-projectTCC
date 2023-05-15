@@ -39,15 +39,19 @@
     @endif
 
     @if (isset($posts))
-        @foreach ($posts as $post)
-            @if ($post->appropriate === 'yes' || ($post->appropriate === 'no' && 2023 - Auth::user()->ano_nascimento >= 18))
-                <div class="Home_section">
-                    <div class="Home_section_publi">
-                        @include('site.homepage.partialhome')
-                    </div>
+        <div class="Home_section">
+            @foreach ($posts as $post)
+                {{-- @if ($post->appropriate === 1 || ($post->appropriate === 0 && 2023 - Auth::user()->ano_nascimento >= 18)) --}}
+
+                <div class="Home_section_publi">
+                    @include('site.homepage.partialhome')
                 </div>
-            @endif
-        @endforeach
+                <br/>
+                <br/>
+
+                {{-- @endif --}}
+            @endforeach
+        </div>
     @endif
 
 

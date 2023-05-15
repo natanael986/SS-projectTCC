@@ -1,0 +1,13 @@
+php artisan migrate:fresh
+
+php artisan permission:create-permission admin
+php artisan permission:create-permission user
+
+php artisan db:seed
+
+php artisan serve
+
+Email: root@gmail.com
+Senha: senha123
+
+// Rodar para inserir informaçoes no banco
