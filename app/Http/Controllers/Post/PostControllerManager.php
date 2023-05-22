@@ -54,6 +54,7 @@ class PostControllerManager extends Controller
         return redirect()->route('Inicio')->with('success', 'Publicação realizada com sucesso!');
     }
 
+
     /**
      * Display the specified resource.
      */
@@ -72,7 +73,6 @@ class PostControllerManager extends Controller
         $routeName = Route::currentRouteName();
 
         return view('site.postmanager.edit', compact('posts', 'routeName'));
-
     }
 
     /**
@@ -106,6 +106,5 @@ class PostControllerManager extends Controller
         $posts->delete();
 
         return redirect()->route('Inicio')->with('success', 'Publicação excluida com sucesso!');
-
     }
 }

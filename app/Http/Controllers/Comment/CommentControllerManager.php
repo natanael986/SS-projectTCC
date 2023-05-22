@@ -32,7 +32,6 @@ class CommentControllerManager extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'comment' => 'required',
         ]);
@@ -45,8 +44,12 @@ class CommentControllerManager extends Controller
         // $comment->image = auth()->user()->image;
         $comment->comment = $request->comment;
         $comment->save();
-        return redirect()->route('Inicio')->with('success', 'Publicação realizada com sucesso!');
+
+        return response()->json([
+            'comment' => $comment
+        ]);// render the view instead of returning it
     }
+
 
     /**
      * Display the specified resource.
@@ -59,7 +62,7 @@ class CommentControllerManager extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( $id)
+    public function edit($id)
     {
         $routeName = Route::currentRouteName();
 

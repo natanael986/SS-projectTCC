@@ -90,7 +90,7 @@ $date_time_extenso_post_updated = strftime('%d/%b/%y,', $post->updated_at->getTi
     <!-- <input type="checkbox" id="toggle-1"> -->
 
     <div id="parte{{ $post->id }}" class="parte ComentarioArea">
-        <form method="POST" action="{{ route('commentmanager.store') }}" enctype="multipart/form-data">
+        <form id="comment-form" enctype="multipart/form-data">
             @csrf
             <div class="form_comment">
                 <form>
@@ -99,9 +99,12 @@ $date_time_extenso_post_updated = strftime('%d/%b/%y,', $post->updated_at->getTi
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <button class="button_comment" type="submit">Enviar</button>
                 </form>
-                <section id="comments">
-                    @include('site.homepage.partialcomment')
-                </section>
+                <div id="comments-container">
+                    <section id="comments">
+                        @include('site.homepage.partialcomment')
+                    </section>
+                </div>
+
             </div>
         </form>
     </div>
@@ -110,7 +113,30 @@ $date_time_extenso_post_updated = strftime('%d/%b/%y,', $post->updated_at->getTi
         @include('site.Modals.modalDenuncia')
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
+        $(function() {
+            $('#comment-form').on('submit', function(event) {
+                event.preventDefault(); // prevent the form from submitting normally
+
+                $.ajax({
+                    url: '{{ route('commentmanager.store') }}',
+                    method: 'post',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#comment-' + commentId);
+                        LoadData();
+                    }
+                });
+
+            });
+            function LoadData({
+                
+            })
+        });
+
+
         const modal = document.querySelector(".modal");
         const overlay = document.querySelector(".overlay");
         const openModalBtn = document.querySelector(".btn-open");

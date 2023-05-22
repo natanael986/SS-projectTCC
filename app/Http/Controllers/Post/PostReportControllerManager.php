@@ -23,7 +23,7 @@ class PostReportControllerManager extends Controller
         $routeName = Route::currentRouteName();
 
         $posts = Posts::all();
-        $post_reports = PostsReports::all();
+        $post_reports = PostsReports::paginate(3);
         $comment_reports = CommentsReports::all();
 
         $comments = DB::table('comments')->get();

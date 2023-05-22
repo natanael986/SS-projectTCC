@@ -6,13 +6,15 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use SendGrid\Mail\Mail as SendGridMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class EmailController extends Controller
 {
     //
     public function exibirFormulario()
     {
-        return view('auth.route-verify');
+        $routeName = Route::currentRouteName();
+        return view('auth.route-verify', compact('routeName'));
     }
 
     public function VerificarEmail($id, Request $request)

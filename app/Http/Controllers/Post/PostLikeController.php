@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use App\Models\Posts;
 use App\Models\PostsLikes;
+use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
 use Illuminate\Http\Request;
 
 class PostLikeController extends Controller
@@ -24,14 +25,14 @@ class PostLikeController extends Controller
             $like->update(['status' => 'liked']);
         }
 
-        return back();
-    }
+        $likesCount = $post->likes()->where('status', 'liked')->count();
+        $dislikesCount = $post->likes()->where('status', 'disliked')->count();
 
-    public function destroy($id)
-    {
-        PostsLikes::findOrFail($id)->delete();
-
-        return redirect()->route('site.home')->with('success', 'Comment excluido com sucesso!');
+        return response()->json([
+            'likesCount' => $likesCount,
+            'dislikesCount' => $dislikesCount,
+            'userStatus' => $like ? $like->status : null,
+        ]);
     }
 
     public function dislike(Posts $post)
@@ -45,10 +46,25 @@ class PostLikeController extends Controller
             ]);
         } elseif ($like->status == 'disliked') {
             $like->update(['status' => 'unliked']);
-        }else {
+        } else {
             $like->update(['status' => 'disliked']);
         }
 
-        return back();
+        $likesCount = $post->likes()->where('status', 'liked')->count();
+        $dislikesCount = $post->likes()->where('status', 'disliked')->count();
+
+        return response()->json([
+            'likesCount' => $likesCount,
+            'dislikesCount' => $dislikesCount,
+            'userStatus' => $like ? $like->status : null,
+        ]);
+    }
+
+
+    public function destroy($id)
+    {
+        PostsLikes::findOrFail($id)->delete();
+
+        return redirect()->route('site.home')->with('success', 'Comment excluido com sucesso!');
     }
 }

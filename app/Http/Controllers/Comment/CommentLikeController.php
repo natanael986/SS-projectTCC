@@ -24,14 +24,14 @@ class CommentLikeController extends Controller
             $like->update(['status' => 'liked']);
         }
 
-        return back();
-    }
+        $likesCount = $comment->likes()->where('status', 'liked')->count();
+        $dislikesCount = $comment->likes()->where('status', 'disliked')->count();
 
-    public function destroy($id)
-    {
-        CommentsLikes::findOrFail($id)->delete();
-
-        return redirect()->route('site.home')->with('success', 'Comment excluido com sucesso!');
+        return response()->json([
+            'likesCount' => $likesCount,
+            'dislikesCount' => $dislikesCount,
+            'userStatus' => $like ? $like->status : null,
+        ]);
     }
 
     public function dislike(Comments $comment)
@@ -45,10 +45,24 @@ class CommentLikeController extends Controller
             ]);
         } elseif ($like->status == 'disliked') {
             $like->update(['status' => 'unliked']);
-        }else {
+        } else {
             $like->update(['status' => 'disliked']);
         }
 
-        return back();
+        $likesCount = $comment->likes()->where('status', 'liked')->count();
+        $dislikesCount = $comment->likes()->where('status', 'disliked')->count();
+
+        return response()->json([
+            'likesCount' => $likesCount,
+            'dislikesCount' => $dislikesCount,
+            'userStatus' => $like ? $like->status : null,
+        ]);
+    }
+
+    public function destroy($id)
+    {
+        CommentsLikes::findOrFail($id)->delete();
+
+        return redirect()->route('site.home')->with('success', 'Comment excluido com sucesso!');
     }
 }

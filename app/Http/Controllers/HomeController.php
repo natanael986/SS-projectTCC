@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Comments;
 use App\Models\CommentsLikes;
 use App\Models\Posts;
+use App\Models\PostsLikes;
+use App\Models\Search;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -24,6 +26,7 @@ class HomeController extends Controller
 
         // Componentes para a montagem dos posts
         $likes = CommentsLikes::all();
+        $post_likes = PostsLikes::all();
         $comments = Comments::all();
         $users = User::all();
 
@@ -32,6 +35,17 @@ class HomeController extends Controller
             'searchID' => request('searchID'),
             'searchFirst' => request('searchFirst')
         ];
+
+        // responsavel por contar palavras pesquisadas
+        if (!empty($searchType['search'])) {
+            // Increment the search count for the current search term
+            Search::updateOrCreate(
+                ['term' => $searchType['search']],
+                ['count' => DB::raw('count + 1')]
+            );
+        }
+
+        $searchCount = Search::where('term', $searchType['search'])->value('count');
 
         $searchMensage = null;
         $posts = null;
@@ -53,7 +67,7 @@ class HomeController extends Controller
             $posts = Posts::inRandomOrder()->get();
         }
 
-        return view('site.home', compact('posts', 'comments', 'users', 'likes', 'routeName', 'searchType', 'searchMensage'));
+        return view('site.home', compact('posts', 'post_likes', 'comments', 'users', 'likes', 'routeName', 'searchType', 'searchMensage', 'searchCount'));
     }
 
     private function getSearchMessage($key, $value, $posts)

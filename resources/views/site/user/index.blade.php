@@ -75,5 +75,26 @@
             <br>
         @endforeach
     </div>
+
+    <div class="report_container" >
+        <div class="report">
+            <h2>PALAVRAS MAIS PESQUISADAS</h2>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">Palavra</div>
+                    <div class="col col-2">Quantidade</div>
+                </li>
+                @foreach ($searches->sortByDesc('count') as $search)
+                    <form method="POST">
+                        <li class="table-row">
+                            <div class="col col-1" data-label="{{ $search->term }}">{{ $search->term }} </div>
+                            <div class="col col-2" data-label="{{ $search->count }}">{{ $search->count }}</div>
+                        </li>
+                    </form>
+                @endforeach
+            </ul>
+        </div>
+
+    </div>
     {{-- @endif --}}
 @endsection

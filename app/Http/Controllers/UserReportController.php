@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comments;
 use App\Models\Posts;
+use App\Models\Search;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,8 @@ class UserReportController extends Controller
     public function index()
     {
         $search = request('search');
+
+        $searches = Search::all();
 
         $routeName = Route::currentRouteName();
 
@@ -31,7 +34,7 @@ class UserReportController extends Controller
             ->groupBy('user_id')
             ->get();
 
-        return view('site.user.index', compact('users', 'search', 'counts', 'routeName'));
+        return view('site.user.index', compact('users', 'search', 'counts', 'routeName', 'searches'));
     }
 
     public function show($id)
